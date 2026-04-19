@@ -1,0 +1,19 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+.env
+.DS_Store
+data/chroma_db/
+data/raw/*.pdf
+!data/raw/.gitkeep
+*.ipynb_checkpoints/
+.idea/
+.vscode/
+
+# doc / md internes sauf le readme principal
+*.md
+!/README.md
+
+# brouillons
+docs/
