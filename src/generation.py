@@ -25,11 +25,13 @@ class LLMGenerator:
     def generate(self, prompt, max_new_tokens=512, temperature=0.2):
         if hasattr(self.tokenizer, "apply_chat_template") and self.tokenizer.chat_template:
             messages = [{"role": "user", "content": prompt}]
-            input_ids = self.tokenizer.apply_chat_template(
-                messages, return_tensors="pt", add_generation_prompt=True
-            ).to(self.model.device)
+            text = self.tokenizer.apply_chat_template(
+                messages, tokenize=False, add_generation_prompt=True
+            )
+            inputs = self.tokenizer(text, return_tensors="pt").to(self.model.device)
         else:
-            input_ids = self.tokenizer(prompt, return_tensors="pt").input_ids.to(self.model.device)
+            inputs = self.tokenizer(prompt, return_tensors="pt").to(self.model.device)
+        input_ids = inputs["input_ids"]
 
         out = self.model.generate(
             input_ids,
