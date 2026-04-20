@@ -13,7 +13,7 @@ from src.rag_pipeline import RAGPipeline
 
 EMBED_MODEL = "OrdalieTech/Solon-embeddings-base-0.1"
 COLLECTION = "collection_solon_base"
-LLM_MODEL = "mistralai/Mistral-7B-Instruct-v0.3"
+LLM_MODEL = "Qwen/Qwen2.5-3B-Instruct"
 PROMPT = "citation"
 
 
@@ -21,7 +21,7 @@ print("loading embedder...")
 embedder = Embedder(EMBED_MODEL)
 print("loading vectorstore...")
 vs = VectorStore("data/chroma_db", COLLECTION)
-print("loading llm (1-2 min)...")
+print(f"loading llm ({LLM_MODEL})...")
 llm = LLMGenerator(LLM_MODEL)
 pipe = RAGPipeline(embedder, vs, llm, prompt_name=PROMPT)
 print("ready")
@@ -67,4 +67,4 @@ demo = gr.ChatInterface(
 
 
 if __name__ == "__main__":
-    demo.launch(share=True)
+    demo.launch()

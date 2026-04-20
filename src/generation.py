@@ -1,24 +1,41 @@
 import torch
-from transformers import AutoTokenizer, AutoModelForCausalLM, BitsAndBytesConfig
+from transformers import AutoTokenizer, AutoModelForCausalLM
 
 
-def _bnb_config():
-    return BitsAndBytesConfig(
-        load_in_4bit=True,
-        bnb_4bit_quant_type="nf4",
-        bnb_4bit_compute_dtype=torch.float16,
-        bnb_4bit_use_double_quant=True,
-    )
+def _select_device():
+    if torch.cuda.is_available():
+        return "cuda"
+    if hasattr(torch.backends, "mps") and torch.backends.mps.is_available():
+        return "mps"
+    return "cpu"
 
 
 class LLMGenerator:
-    def __init__(self, model_name, quantize_4bit=True):
+    def __init__(self, model_name):
         self.model_name = model_name
-        kwargs = {"device_map": "auto"}
-        if quantize_4bit and torch.cuda.is_available():
-            kwargs["quantization_config"] = _bnb_config()
+        self.device = _select_device()
+
+        kwargs = {}
+        if self.device == "cuda":
+            from transformers import BitsAndBytesConfig
+            kwargs["quantization_config"] = BitsAndBytesConfig(
+                load_in_4bit=True,
+                bnb_4bit_quant_type="nf4",
+                bnb_4bit_compute_dtype=torch.float16,
+                bnb_4bit_use_double_quant=True,
+            )
+            kwargs["device_map"] = "auto"
+        elif self.device == "mps":
+            kwargs["torch_dtype"] = torch.float16
+        else:
+            kwargs["torch_dtype"] = torch.float32
+
         self.tokenizer = AutoTokenizer.from_pretrained(model_name)
         self.model = AutoModelForCausalLM.from_pretrained(model_name, **kwargs)
+
+        if self.device != "cuda":
+            self.model = self.model.to(self.device)
+
         if self.tokenizer.pad_token is None:
             self.tokenizer.pad_token = self.tokenizer.eos_token
 
