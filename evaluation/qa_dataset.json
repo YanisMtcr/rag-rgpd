@@ -1,0 +1,142 @@
+[
+  {
+    "id": "rgpd_01",
+    "question": "A partir de combien de salaries faut-il designer un DPO ?",
+    "expected_sources": ["rgpd_texte.pdf", "cnil_fiche_dpo.pdf"],
+    "expected_keywords": ["autorite publique", "suivi regulier", "grande echelle"],
+    "reference_answer": "Il n'y a pas de seuil par effectif. Le DPO est obligatoire pour les autorites publiques, ou si l'activite principale implique un suivi regulier et systematique a grande echelle, ou un traitement a grande echelle de donnees sensibles (art. 37 RGPD)."
+  },
+  {
+    "id": "rgpd_02",
+    "question": "Quels sont les droits d'une personne concernee sous le RGPD ?",
+    "expected_sources": ["rgpd_texte.pdf", "cnil_fiche_droits.pdf"],
+    "expected_keywords": ["acces", "rectification", "effacement", "opposition", "portabilite"],
+    "reference_answer": "Droits d'acces, de rectification, d'effacement, a la limitation, a la portabilite, d'opposition, et de ne pas faire l'objet d'une decision automatisee (articles 15 a 22 RGPD)."
+  },
+  {
+    "id": "rgpd_03",
+    "question": "Quel est le delai de notification d'une fuite de donnees a l'autorite de controle ?",
+    "expected_sources": ["rgpd_texte.pdf", "cnil_fiche_fuite.pdf"],
+    "expected_keywords": ["72 heures"],
+    "reference_answer": "72 heures apres en avoir pris connaissance, sauf si la violation n'est pas susceptible d'engendrer un risque pour les droits et libertes (article 33 RGPD)."
+  },
+  {
+    "id": "rgpd_04",
+    "question": "Quand faut-il realiser une analyse d'impact (AIPD) ?",
+    "expected_sources": ["rgpd_texte.pdf", "cnil_fiche_aipd.pdf"],
+    "expected_keywords": ["risque eleve", "nouvelle technologie", "grande echelle"],
+    "reference_answer": "Des lors qu'un traitement est susceptible d'engendrer un risque eleve pour les droits et libertes, notamment en cas de nouvelle technologie, traitement a grande echelle de donnees sensibles, ou surveillance systematique (article 35 RGPD)."
+  },
+  {
+    "id": "rgpd_05",
+    "question": "Quelle est la base legale pour traiter les donnees des salaries ?",
+    "expected_sources": ["cnil_fiche_rh.pdf", "rgpd_texte.pdf"],
+    "expected_keywords": ["contrat", "obligation legale", "interet legitime"],
+    "reference_answer": "Selon le cas: execution du contrat de travail, obligation legale (paie, DSN), ou interet legitime de l'employeur. Le consentement est rarement adapte en contexte RH du fait du lien de subordination."
+  },
+  {
+    "id": "rgpd_06",
+    "question": "Qu'est-ce qu'une donnee sensible au sens du RGPD ?",
+    "expected_sources": ["rgpd_texte.pdf"],
+    "expected_keywords": ["origine raciale", "sante", "religion", "orientation"],
+    "reference_answer": "L'article 9 definit les categories particulieres: origine raciale ou ethnique, opinions politiques, convictions religieuses, appartenance syndicale, donnees genetiques, biometriques, de sante, et donnees concernant la vie ou l'orientation sexuelle."
+  },
+  {
+    "id": "rgpd_07",
+    "question": "Quelle est l'amende maximale sous le RGPD ?",
+    "expected_sources": ["rgpd_texte.pdf"],
+    "expected_keywords": ["20 millions", "4%", "chiffre d'affaires"],
+    "reference_answer": "Jusqu'a 20 millions d'euros ou 4% du chiffre d'affaires mondial annuel, le montant le plus eleve etant retenu (article 83)."
+  },
+  {
+    "id": "rgpd_08",
+    "question": "Un transfert de donnees vers les Etats-Unis est-il autorise ?",
+    "expected_sources": ["cnil_fiche_transferts.pdf", "rgpd_texte.pdf"],
+    "expected_keywords": ["Data Privacy Framework", "clauses contractuelles", "BCR"],
+    "reference_answer": "Oui sous conditions: via le Data Privacy Framework depuis 2023 pour les entreprises certifiees, ou par clauses contractuelles types, ou BCR, ou autres garanties appropriees (chapitre V RGPD)."
+  },
+  {
+    "id": "cnil_01",
+    "question": "Quelles sont les bonnes pratiques pour les cookies selon la CNIL ?",
+    "expected_sources": ["cnil_fiche_cookies.pdf"],
+    "expected_keywords": ["consentement", "refuser", "bouton"],
+    "reference_answer": "Le consentement doit etre libre, specifique, eclaire et univoque. Refuser les cookies doit etre aussi simple que de les accepter (meme niveau d'interface). Pas de cookies de mesure d'audience sans consentement sauf exception CNIL."
+  },
+  {
+    "id": "cnil_02",
+    "question": "Combien de temps puis-je conserver un CV d'un candidat non retenu ?",
+    "expected_sources": ["cnil_fiche_dureeconservation.pdf", "cnil_fiche_rh.pdf"],
+    "expected_keywords": ["2 ans"],
+    "reference_answer": "La CNIL recommande 2 ans apres le dernier contact avec le candidat si celui-ci ne s'oppose pas a la conservation, pour la constitution d'un vivier."
+  },
+  {
+    "id": "cnil_03",
+    "question": "Que faire en cas de violation de donnees personnelles ?",
+    "expected_sources": ["cnil_fiche_fuite.pdf"],
+    "expected_keywords": ["documenter", "notifier", "72 heures", "personnes concernees"],
+    "reference_answer": "Documenter la violation en interne, notifier la CNIL dans les 72h si risque pour les droits et libertes, et informer les personnes concernees si risque eleve."
+  },
+  {
+    "id": "cnil_04",
+    "question": "Comment recueillir un consentement valide ?",
+    "expected_sources": ["cnil_fiche_consentement.pdf"],
+    "expected_keywords": ["libre", "specifique", "eclaire", "univoque"],
+    "reference_answer": "Le consentement doit etre libre (sans pression), specifique (par finalite), eclaire (information prealable claire) et univoque (acte positif, pas de case pre-cochee)."
+  },
+  {
+    "id": "cnil_05",
+    "question": "Quelles sont les mesures de securite minimales a mettre en place ?",
+    "expected_sources": ["cnil_fiche_securite.pdf"],
+    "expected_keywords": ["chiffrement", "authentification", "sauvegardes", "logs"],
+    "reference_answer": "Authentification robuste, chiffrement des donnees sensibles, sauvegardes, journalisation des acces, sensibilisation du personnel, et mise a jour reguliere des systemes."
+  },
+  {
+    "id": "cnil_06",
+    "question": "Dois-je nommer un DPO si je suis une PME de 50 personnes ?",
+    "expected_sources": ["cnil_fiche_dpo.pdf", "rgpd_texte.pdf"],
+    "expected_keywords": ["pas obligatoire", "recommande", "activite principale"],
+    "reference_answer": "Pas obligatoire pour une PME classique. Obligatoire uniquement si l'activite principale consiste en un suivi regulier et systematique a grande echelle, ou un traitement a grande echelle de donnees sensibles. La CNIL recommande toutefois de designer un referent."
+  },
+  {
+    "id": "sanction_01",
+    "question": "Pourquoi Google a-t-il ete sanctionne par la CNIL en 2019 ?",
+    "expected_sources": ["cnil_sanction_google_2019.pdf"],
+    "expected_keywords": ["transparence", "consentement", "personnalisation"],
+    "reference_answer": "50 millions d'euros pour manque de transparence, information insuffisante et consentement non valide pour la personnalisation de la publicite (deliberation SAN-2019-001)."
+  },
+  {
+    "id": "sanction_02",
+    "question": "Quel montant Clearview AI a-t-elle ete condamnee a payer ?",
+    "expected_sources": ["cnil_sanction_clearview_2022.pdf"],
+    "expected_keywords": ["20 millions", "reconnaissance faciale"],
+    "reference_answer": "20 millions d'euros en 2022, plus astreinte de 100000 euros par jour. Motif: collecte massive de photos a des fins de reconnaissance faciale sans base legale."
+  },
+  {
+    "id": "sanction_03",
+    "question": "Quelles sont les sanctions liees aux cookies ?",
+    "expected_sources": ["cnil_sanction_google_2019.pdf", "cnil_fiche_cookies.pdf"],
+    "expected_keywords": ["cookies", "refuser", "consentement"],
+    "reference_answer": "La CNIL a sanctionne plusieurs acteurs pour non-conformite cookies (bouton refuser absent ou moins visible, depots avant consentement). Amendes jusqu'a 150 millions (Google LLC, decembre 2021)."
+  },
+  {
+    "id": "sanction_04",
+    "question": "Pourquoi Amazon a ete sanctionne en 2020 ?",
+    "expected_sources": ["cnil_sanction_amazon_2020.pdf"],
+    "expected_keywords": ["cookies", "information"],
+    "reference_answer": "35 millions d'euros pour depot de cookies publicitaires sans consentement prealable et information insuffisante des utilisateurs."
+  },
+  {
+    "id": "oos_01",
+    "question": "Quelle est la capitale du Japon ?",
+    "expected_sources": [],
+    "expected_keywords": ["ne sais pas", "contexte"],
+    "reference_answer": "Cette question est hors du champ des documents fournis. Une bonne reponse est 'Je ne sais pas' ou equivalent."
+  },
+  {
+    "id": "oos_02",
+    "question": "Recommande-moi un bon restaurant a Lyon.",
+    "expected_sources": [],
+    "expected_keywords": ["ne sais pas", "contexte"],
+    "reference_answer": "Hors scope. Une bonne reponse indique que le contexte ne permet pas de repondre."
+  }
+]
