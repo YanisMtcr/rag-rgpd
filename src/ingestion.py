@@ -106,5 +106,5 @@ def ingest_all(raw_dir):
         elif pdf.name.startswith("cnil_sanction_"):
             all_chunks.extend(parse_sanction_cnil(pdf))
         else:
-            print(f"skip (prefixe inconnu): {pdf.name}")
+            print(f"skipped (unknown prefix): {pdf.name}")
     return all_chunks
