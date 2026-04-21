@@ -1,6 +1,6 @@
 # Source PDFs
 
-This folder holds the PDFs that are parsed into the ChromaDB store. They are not commited (they are a bit heavy and the CNIL documents stay under CNIL copyright), so they have to be placed here before running `notebooks/01_ingestion.ipynb`.
+This folder holds the PDFs that are parsed into the ChromaDB store by `notebooks/01_ingestion.ipynb`. All the documents come from public official sources.
 
 The ingestion parser in `src/ingestion.py` dispatches on the filename prefix:
 

@@ -21,7 +21,7 @@ Questions and answers are in French because that is what I care about for this u
 src/                  pipeline modules (ingestion, embedding, vectorstore, generation, prompts, rag_pipeline)
 notebooks/            runnable notebooks (see below)
 evaluation/           QA dataset and metrics
-data/raw/             source PDFs (not versioned, see data/raw/README.md)
+data/raw/             source PDFs (see data/raw/README.md)
 data/chroma_db/       ChromaDB persisted store
 app.py                gradio interface
 ```
@@ -59,3 +59,11 @@ The PDFs are not commited, see `data/raw/README.md` for the list. Once `data/raw
 ## Note on the demo
 
 The demo video was recorded running everything locally on a Mac M3 Pro (MPS), so generation is slow (tens of seconds per answer). On a machine with a CUDA GPU, or behind a hosted API, latency would be much lower.
+
+## References
+
+- Lewis et al., *Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks*, 2020: https://arxiv.org/abs/2005.11401
+- ChromaDB docs: https://docs.trychroma.com/
+- sentence-transformers docs: https://www.sbert.net/
+- HuggingFace transformers (tokenizer, chat templates, `AutoModelForCausalLM`): https://huggingface.co/docs/transformers
+- LangChain `RecursiveCharacterTextSplitter` and `PyPDFLoader` used for PDF ingestion: https://python.langchain.com/docs/concepts/text_splitters/
