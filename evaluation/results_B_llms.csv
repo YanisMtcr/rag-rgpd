@@ -1,0 +1,4 @@
+llm,keyword,gen_ms
+tinyllama_1b,0.062,21980.0
+qwen_1.5b,0.106,2268.0
+qwen_3b,0.183,3855.0

@@ -26,7 +26,7 @@ class LLMGenerator:
             )
             kwargs["device_map"] = "auto"
         elif self.device == "mps":
-            kwargs["torch_dtype"] = torch.float16
+            kwargs["torch_dtype"] = torch.bfloat16
         else:
             kwargs["torch_dtype"] = torch.float32
 

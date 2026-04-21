@@ -1,0 +1,4 @@
+embedder,recall@4,keyword,gen_ms
+minilm,0.667,0.126,1936.0
+e5_base,0.611,0.191,6745.0
+solon,0.611,0.191,3408.0

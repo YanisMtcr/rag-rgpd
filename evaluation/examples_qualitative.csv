@@ -1,0 +1,11 @@
+prompt,id,score,answer
+strict,rgpd_01,0.0,Je ne sais pas
+strict,rgpd_02,0.0,Je ne sais pas
+citation,rgpd_01,0.0,Le contexte fourni ne contient aucune information concernant le nombre minimal de salariés nécessaires pour designer un DPO. Il ne mentionne pas de seuil minimum basé sur le nombre de salariés. Pour o
+citation,rgpd_02,0.2,"Selon le RGPD, les personnes concernées ont plusieurs droits, notamment :
+
+- Le droit de savoir quelles informations sont traitées [source: CNIL fiche consentement].
+
+- Le droit d'accès aux données pe"
+structured,rgpd_01,0.0,"1. Reponse directe : Selon les lignes directrices de la CNIL, il n'y a pas de limite précise en termes de nombre de salariés pour nécessiter la désignation d'un DPO. Cependant, cela dépend des circons"
+structured,rgpd_02,0.0,"1. Les personnes concernées ont le droit de donner leur consentement pour le traitement de leurs données personnelles, mais ce consentement doit être recueilli dans des conditions particulières pour ê"

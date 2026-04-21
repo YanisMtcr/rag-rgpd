@@ -11,20 +11,16 @@ from src.generation import LLMGenerator
 from src.rag_pipeline import RAGPipeline
 
 
-EMBED_MODEL = "OrdalieTech/Solon-embeddings-base-0.1"
-COLLECTION = "collection_solon_base"
+EMBED_MODEL = "intfloat/multilingual-e5-base"
+COLLECTION = "collection_e5_base"
 LLM_MODEL = "Qwen/Qwen2.5-3B-Instruct"
 PROMPT = "citation"
 
 
-print("loading embedder...")
 embedder = Embedder(EMBED_MODEL)
-print("loading vectorstore...")
 vs = VectorStore("data/chroma_db", COLLECTION)
-print(f"loading llm ({LLM_MODEL})...")
 llm = LLMGenerator(LLM_MODEL)
 pipe = RAGPipeline(embedder, vs, llm, prompt_name=PROMPT)
-print("ready")
 
 
 def format_sources(chunks):
@@ -58,10 +54,12 @@ demo = gr.ChatInterface(
     title="Assistant DPO - RAG RGPD",
     description="Pose une question sur le RGPD, les pratiques CNIL ou les sanctions.",
     examples=[
-        "Dois-je nommer un DPO si j'ai 30 salaries ?",
-        "Quelle est la duree de conservation max d'un CV ?",
-        "Pourquoi Google a ete sanctionne en 2019 ?",
-        "Que faire en cas de fuite de donnees ?",
+        ["Dois-je nommer un DPO si j'ai 30 salaries ?", "tout", 4],
+        ["Quelle est la duree de conservation max d'un CV ?", "tout", 4],
+        ["Pourquoi Google a ete sanctionne en 2019 ?", "sanction", 4],
+        ["Que faire en cas de fuite de donnees ?", "tout", 4],
+        ["Depuis quand le RGPD est-il applicable ?", "rgpd", 4],
+        ["Comment recueillir un consentement valide ?", "fiche_cnil", 4],
     ],
 )
 
