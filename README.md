@@ -6,7 +6,7 @@ A question answering assistant over French GDPR content. The corpus is the GDPR 
 
 Demo video: [`Demo.mov`](Demo.mov).
 
-Questions and answers are in French because that is what I care about for this use case. The code, filenames and comments are in English.
+Questions and answers are in French because that is what I care about for this use case.
 
 ## Stack
 
